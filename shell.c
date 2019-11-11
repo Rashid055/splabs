@@ -10,38 +10,38 @@ int print_select();
 
 int main() 
 {
-	char str[MAX_SIZE];  /* Initialize static memory. */
+	char t34[MAX_SIZE];  /* Initialize static memory. */
     	int length;
-	char str_copy[MAX_SIZE];
+	char t34_copy[MAX_SIZE];
 	printf("Enter a command line ");
-    while (fgets( str, MAX_SIZE, stdin))
+    while (fgets( t34, MAX_SIZE, stdin))
     {
 
 
 
-        length=strlen(str);
+        length=t34len(t34);
 
-        if (str[length-1]=='\n')
+        if (t34[length-1]=='\n')
         {
-             str[length-1]='\0';
+             t34[length-1]='\0';
         }
 
 
-	int x=0,z=length;
-	 while (str[x]==' ')
-        	x++;
-    	while (str[z-1]==' ')
-        	z--;
-	z-=x;
-	strncpy(str,str+x,z);
+	int shym=0,astana=length;
+	 while (t34[shym]==' ')
+        	shym++;
+    	while (t34[astana-1]==' ')
+        	astana--;
+	astana-=shym;
+	strncpy(t34,t34+shym,astana);
 
 
-	length=strlen(str);	
-       	if(strcmp(str,"exit")==0){
+	length=t34len(t34);	
+       	if(strcmp(t34,"exit")==0){
 		exit(1);
 		break;
 	}
-	char *pChar = &str[strlen(str)-1];
+	char *pChar = &t34[t34len(t34)-1];
 		if(strcmp(pChar,"&")==0){
 
 			pid_t process = fork();
@@ -50,7 +50,7 @@ int main()
 				abort();
 			}
 			else if(process==0){
-				char *name[] = { "/bin/bash","-c",str,NULL};
+				char *name[] = { "/bin/bash","-c",st34,NULL};
 				execvp(name[0], name);
 				exit(-1);
 			}
@@ -66,7 +66,7 @@ int main()
 				abort();
 			}
 			else if(process==0){
-				  char *name[] = { "/bin/bash","-c",str,NULL};
+				  char *name[] = { "/bin/bash","-c",t34,NULL};
 				  execvp(name[0], name);
 				exit(-1);
 			}
